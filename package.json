@@ -1,0 +1,31 @@
+{
+  "name": "marthamarin",
+  "version": "0.0.0",
+  "description": "Martha Marin Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start karma.conf.js --no-auto-watch --single-run",
+    "dev": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pgarciacamou/marthamarin.git"
+  },
+  "keywords": [
+    "martha",
+    "marin",
+    "website",
+    "react",
+    "reactjs",
+    "blog",
+    "projects",
+    "architect",
+    "architecture"
+  ],
+  "author": "Pablo Garcia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pgarciacamou/marthamarin/issues"
+  },
+  "homepage": "www.marthamarin.info"
+}
