@@ -32,8 +32,6 @@ var lessOptions = {
 };
 
 module.exports = function (rights) {
-  rights = rights || "";
-  rights = "/" + rights;
   var router = express.Router();
 
   router.get(path.join(rights, "/components"), browserify(paths.components, browserifyOptions));
