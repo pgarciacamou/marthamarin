@@ -51,7 +51,7 @@ app.set("view engine", "ejs");
 app.use("/public", express.static(paths._public));
 app.use("/admin", adminRouter);
 app.use("/api", dbRouter);
-app.use("*", userRouter);
+app.use("/", userRouter);
 
 isProduction && app.on("stormpath.ready", startServer);
 isDevelopment && startServer();

@@ -34,15 +34,18 @@ var lessOptions = {
 module.exports = function (rights) {
   var router = express.Router();
 
-  router.get(path.join(rights, "/components"), browserify(paths.components, browserifyOptions));
-  router.get(path.join(rights, "/scripts"), browserify(paths.scripts, browserifyOptions));
-  router.get(path.join(rights, "/styles"), less(paths.styles, lessOptions));
-  router.get("*", function (req, res, next) {
+  router.get("/components", browserify(paths.components, browserifyOptions));
+  router.get("/scripts", browserify(paths.scripts, browserifyOptions));
+  router.get("/styles", less(paths.styles, lessOptions));
+  router.get("/", function (req, res, next) {
     res.render(paths.index, {
       title: "Martha Marin Website",
-      admin: rights === "admin",
-      user: rights !== "admin"
+      admin: rights === "/admin",
+      user: rights === "/"
     });
+  });
+  router.use("*", function (req, res, next) {
+    res.sendStatus(404);
   });
 
   return router;
