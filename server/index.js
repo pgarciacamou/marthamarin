@@ -1,10 +1,7 @@
 var path                  = require("path");
 var express               = require("express");
 var ExpressStormpath      = require("express-stormpath");
-var browserifyMiddleware  = require("browserify-middleware");
-var babelify              = require("babelify");
-var less                  = require("express-less");
-var dbRouter              = require("./dbaccess");
+// var dbRouter              = require("./dbaccess");
 var websiteRouter         = require("./websiteRouter");
 var adminRouter           = websiteRouter("/admin");
 var userRouter            = websiteRouter("/");
@@ -50,7 +47,7 @@ isDevelopment && app
 app.set("view engine", "ejs");
 app.use("/public", express.static(paths._public));
 app.use("/admin", adminRouter);
-app.use("/api", dbRouter);
+// app.use("/api", dbRouter);
 app.use("/", userRouter);
 
 isProduction && app.on("stormpath.ready", startServer);
