@@ -26,7 +26,7 @@ var browserifyOptions = {
   debug: true,
   precompile: true,
   minify: true,
-  cache: "dynamic"
+  cache: isProduction ? true : "dynamic"
 };
 
 var lessOptions = {
