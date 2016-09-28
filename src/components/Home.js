@@ -7,7 +7,7 @@ export default React.createClass({
   render() {
     return (
       <div>
-        <h1>Hello {this.state.admin ? "Admin" : "World"}</h1>
+        <h1>Hello {this.state.isAdmin ? "Admin" : "World"}</h1>
       </div>
     );
   }

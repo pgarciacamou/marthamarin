@@ -2,8 +2,12 @@ import React from 'react';
 
 export default {
   getInitialState() {
+    var isAdmin = document.body.classList.contains("admin");
+    var baseRoute = isAdmin ? "/admin" : "";
+
     return {
-      admin: document.body.classList.contains("admin")
+      isAdmin,
+      baseRoute
     };
   }
 };

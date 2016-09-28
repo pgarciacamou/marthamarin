@@ -1,8 +1,9 @@
 import React from 'react';
 // import { Nav, ToggleButton } from './components/Nav.js';
+import Nav from './Nav';
 import { $ } from '../scripts/utils'; 
 
-var navActiveClass = "show-menu";
+// var navActiveClass = "show-menu";
 
 export default React.createClass({
   displayName: 'App',
@@ -10,7 +11,10 @@ export default React.createClass({
   render() {
     return (
       <div>
-        {this.props.children}
+        <Nav />
+        <div>
+          {this.props.children}
+        </div>
         {
         // <div className="nav-wrapper">
         //   <Nav menu={this.menuSwitch}/>
