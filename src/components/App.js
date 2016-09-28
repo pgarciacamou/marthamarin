@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Nav, ToggleButton } from './components/Nav.jsx';
+// import { Nav, ToggleButton } from './components/Nav.js';
 import { $ } from '../scripts/utils'; 
 
 var navActiveClass = "show-menu";

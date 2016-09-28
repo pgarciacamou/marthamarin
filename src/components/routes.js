@@ -11,6 +11,7 @@ import Home from './Home';
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={Home}/>
+    <Route path="/admin" component={Home} />
     {
     // <Route path="/about" component={About}/>
     // <Route path="/projects" component={Projects}/>
