@@ -1,12 +1,9 @@
-import React from 'react'
+import React from 'react';
+import AppMixin from './AppMixin';
 
 export default React.createClass({
   displayName: 'Home',
-  getInitialState() {
-    return {
-      admin: document.body.classList.contains("admin")
-    };
-  },
+  mixins: [AppMixin],
   render() {
     return (
       <div>
