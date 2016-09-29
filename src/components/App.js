@@ -4,7 +4,6 @@ import Nav from './Nav';
 import { $ } from '../scripts/utils'; 
 
 // var navActiveClass = "show-menu";
-
 export default React.createClass({
   displayName: 'App',
   // menuSwitch: cssSwitch($("#app"), navActiveClass),

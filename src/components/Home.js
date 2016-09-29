@@ -6,8 +6,16 @@ export default React.createClass({
   mixins: [AppMixin],
   render() {
     return (
-      <div>
-        <h1>Hello {this.state.isAdmin ? "Admin" : "World"}</h1>
+      <div className="home">
+        <section className="container">
+          <h1>Hello {this.state.isAdmin ? "Martha" : "World"}</h1>
+        </section>
+        <section className="example-banner">
+          <div className="container">
+            <h2>Something</h2>
+            <p>Some text</p>
+          </div>
+        </section>
       </div>
     );
   }
