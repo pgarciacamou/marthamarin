@@ -1,0 +1,25 @@
+nav {
+  ul {
+    list-style: none;
+    li {
+      display: inline;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+    }
+  }
+
+  .container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  a:link:not(#exclude-styling),
+  a:visited:not(#exclude-styling),
+  a:hover:not(#exclude-styling) {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  height: 5em;
+}
