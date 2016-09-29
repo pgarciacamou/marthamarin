@@ -39,6 +39,7 @@
     "express": "^4.14.0",
     "express-less": "^0.1.0",
     "express-stormpath": "^3.1.5",
+    "less-plugin-autoprefix": "^1.5.1",
     "mongoose": "^4.6.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
@@ -53,7 +54,6 @@
     "karma-browserify": "^5.1.0",
     "karma-jasmine": "^1.0.2",
     "karma-phantomjs-launcher": "^1.0.2",
-    "less-plugin-autoprefix": "^1.5.1",
     "phantomjs-prebuilt": "^2.1.12",
     "react-addons-test-utils": "^15.3.2"
   }
