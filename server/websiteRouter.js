@@ -5,6 +5,8 @@ var browserify            = require("browserify-middleware");
 var path                  = require("path");
 var babelify              = require("babelify");
 var less                  = require("express-less");
+var LessPluginAutoPrefix  = require('less-plugin-autoprefix');
+var autoprefixPlugin      = new LessPluginAutoPrefix({browsers: ["> 5%"]});
 
 var paths = {
   _client: path.join(__dirname, "..", "src"),
@@ -31,7 +33,8 @@ var browserifyOptions = {
 
 var lessOptions = {
   compress: true,
-  debug: true
+  debug: true,
+  plugins: [autoprefixPlugin]
 };
 
 module.exports = function (rights) {

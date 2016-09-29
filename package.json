@@ -53,6 +53,7 @@
     "karma-browserify": "^5.1.0",
     "karma-jasmine": "^1.0.2",
     "karma-phantomjs-launcher": "^1.0.2",
+    "less-plugin-autoprefix": "^1.5.1",
     "phantomjs-prebuilt": "^2.1.12",
     "react-addons-test-utils": "^15.3.2"
   }
