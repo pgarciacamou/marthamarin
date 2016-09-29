@@ -1,6 +1,7 @@
 import React from 'react';
 // import { Nav, ToggleButton } from './components/Nav.js';
 import Nav from './Nav';
+import NavFooter from './NavFooter';
 import { $ } from '../scripts/utils'; 
 
 // var navActiveClass = "show-menu";
@@ -11,6 +12,7 @@ export default React.createClass({
     return (
       <div>
         <Nav />
+        <NavFooter />
         <div>
           {this.props.children}
         </div>
