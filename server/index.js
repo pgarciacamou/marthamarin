@@ -10,6 +10,10 @@ var isProduction          = process.env.NODE_ENV === "production";
 var isDevelopment         = process.env.NODE_ENV === "development";
 var PORT                  = process.env.PORT || 5000;
 
+function skipMiddleWare(req, res, next) {
+  next();
+}
+
 var paths = {
   _client: path.join(__dirname, "..", "src"),
   _public: path.join(__dirname, "..", "public")
@@ -31,6 +35,10 @@ function initExpressStormpath(argument) {
       login: {
         enabled: true,
         nextUri: "/admin"
+      },
+      logout: {
+        enabled: true,
+        nextUri: "/"
       }
     },
     apiKeyId:     process.env.STORMPATH_API_KEY_ID,
@@ -46,7 +54,9 @@ isDevelopment && app
 
 app.set("view engine", "ejs");
 app.use("/public", express.static(paths._public));
-app.use("/admin", adminRouter);
+app.use("/admin", isProduction ? 
+  ExpressStormpath.groupsRequired(['admin']) : 
+  skipMiddleWare, adminRouter);
 // app.use("/api", dbRouter);
 app.use("/", userRouter);
 
