@@ -10,9 +10,10 @@ var NavFooter = React.createClass({
     AppMixin,
     RoutesMixin
   ],
-  handleButtonClick() {
+  handleButtonClick(e) {
     var nav = ReactDOM.findDOMNode(this);
     nav.classList.toggle("active");
+    e.stopPropagation();
   },
   render() {
     return (
@@ -28,7 +29,7 @@ var NavFooter = React.createClass({
           ))}
         </ul>
         <div className="button" onClick={this.handleButtonClick}>
-          <span>Menu</span>
+          <span>MENU</span>
         </div>
       </nav>
     );
