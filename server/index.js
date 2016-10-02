@@ -13,6 +13,7 @@ var PORT                  = process.env.PORT || 5000;
 function skipMiddleWare(req, res, next) {
   next();
 }
+var adminGroupMiddleWare  = isProduction ? ExpressStormpath.groupsRequired(["admin"]) : skipMiddleWare;
 
 var paths = {
   _client: path.join(__dirname, "..", "src"),
@@ -54,9 +55,7 @@ isDevelopment && app
 
 app.set("view engine", "ejs");
 app.use("/public", express.static(paths._public));
-app.use("/admin", isProduction ? 
-  ExpressStormpath.groupsRequired(['admin']) : 
-  skipMiddleWare, adminRouter);
+app.use("/admin", adminGroupMiddleWare, adminRouter);
 // app.use("/api", dbRouter);
 app.use("/", userRouter);
 
