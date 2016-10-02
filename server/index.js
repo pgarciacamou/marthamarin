@@ -35,16 +35,22 @@ function initExpressStormpath(argument) {
     web: {
       login: {
         enabled: true,
+        uri: "/login",
         nextUri: "/admin"
       },
       logout: {
         enabled: true,
+        uri: "/logout",
         nextUri: "/"
       }
     },
     apiKeyId:     process.env.STORMPATH_API_KEY_ID,
     apiKeySecret: process.env.STORMPATH_API_KEY_SECRET,
-    application:  process.env.STORMPATH_SECRET_KEY
+    application:  process.env.STORMPATH_SECRET_KEY,
+    postLogoutHandler: function (account, req, res, next) {
+      console.log('User', account.email, 'just logged out!');
+      next();
+    }
   });
 }
 
