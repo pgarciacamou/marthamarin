@@ -25,9 +25,9 @@ var browserifyOptions = {
       presets: ["es2015", "react"]
     }]
   ],
-  debug: true,
   precompile: true,
-  minify: true,
+  debug: !isProduction,
+  minify: isProduction,
   cache: isProduction ? true : "dynamic"
 };
 
