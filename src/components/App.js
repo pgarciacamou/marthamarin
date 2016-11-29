@@ -1,12 +1,13 @@
-import React from 'react';
-// import { Nav, ToggleButton } from './components/Nav.js';
-import Nav from './Nav';
-import NavFooter from './NavFooter';
-import { $ } from '../scripts/utils'; 
+import React from "react";
+// import { Nav, ToggleButton } from "./components/Nav.js";
+import Nav from "./Nav";
+import NavFooter from "./NavFooter";
+import { $ } from "../scripts/utils"; 
 
 // var navActiveClass = "show-menu";
 export default React.createClass({
-  displayName: 'App',
+  displayName: "App",
+
   // menuSwitch: cssSwitch($("#app"), navActiveClass),
   render() {
     return (

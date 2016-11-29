@@ -10,6 +10,11 @@ export default {
       },
       {
         id: 2,
+        path: path.join(baseRoute, "/blog"),
+        name: "Blog"
+      },
+      {
+        id: 3,
         path: isAdmin ? '/logout' : '/login',
         name: isAdmin ? 'Logout' : 'Login',
         external: true
