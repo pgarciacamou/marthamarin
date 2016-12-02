@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Route, IndexRoute } from 'react-router'
+import { Route, IndexRoute } from 'react-router';
 
 import App from './App';
 import Home from './Home';
@@ -13,7 +13,11 @@ export default (
   <Route path="/" component={App}>
     <IndexRoute component={Home}/>
     <Route path="/admin" component={Home} />
+
+    {/* BLOG */}
     <Route path="/blog" component={Blog} />
+    <Route path="/admin/blog" component={Blog} />
+
     {
     // <Route path="/about" component={About}/>
     // <Route path="/projects" component={Projects}/>
