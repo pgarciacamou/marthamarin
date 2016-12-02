@@ -5,6 +5,7 @@ import { Route, IndexRoute } from 'react-router';
 import App from './App';
 import Home from './Home';
 import Blog from './Blog';
+import NotFound from './NotFound';
 // import About from './partials/About.jsx';
 // import Projects from './partials/Projects.jsx';
 // import Dashboard from './partials/Dashboard.jsx';
@@ -12,16 +13,18 @@ import Blog from './Blog';
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={Home}/>
-    <Route path="/admin" component={Home} />
+    <Route path="/admin" component={Home}/>
 
     {/* BLOG */}
-    <Route path="/blog" component={Blog} />
-    <Route path="/admin/blog" component={Blog} />
+    <Route path="/blog" component={Blog}/>
+    <Route path="/admin/blog" component={Blog}/>
 
     {
     // <Route path="/about" component={About}/>
     // <Route path="/projects" component={Projects}/>
     // <Route path="/dashboard" component={Dashboard}/>
     }
+
+    <Route path="*" component={NotFound}/>
   </Route>
 );

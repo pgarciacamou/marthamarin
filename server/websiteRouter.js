@@ -51,9 +51,6 @@ module.exports = function (rights) {
       base: path.join(rights, "/")
     });
   });
-  router.use("*", function (req, res, next) {
-    res.sendStatus(404);
-  });
 
   return router;
 };
