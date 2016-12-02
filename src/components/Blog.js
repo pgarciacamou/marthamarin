@@ -1,6 +1,7 @@
 import React from "react";
 import { creators } from "../actions/BlogActions";
 import blogStore from "../stores/BlogStore";
+import AppMixin from './AppMixin';
 
 const boundCreators = {
   createPost: (title, content) => blogStore.dispatch(creators.createPost(title, content)),
@@ -9,6 +10,8 @@ const boundCreators = {
 
 export default React.createClass({
   displayName: "Blog",
+
+  mixins: [AppMixin],
 
   getInitialState() {
     return blogStore.getState();
@@ -40,8 +43,12 @@ export default React.createClass({
             <p key={i}>{post.title} - {post.content}</p>
           );
         })}
-        <button onClick={this.createPost}>+</button>
-        <button onClick={this.deletePost}>-</button>
+        {this.state.isAdmin && (
+          <div>
+            <button onClick={this.createPost}>+</button>
+            <button onClick={this.deletePost}>-</button>
+          </div>
+        )}
       </div>
     );
   }
