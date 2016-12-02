@@ -37,18 +37,20 @@ export default React.createClass({
 
   render() {
     return (
-      <div>
-        {this.state.posts.map((post, i) => {
-          return (
-            <p key={i}>{post.title} - {post.content}</p>
-          );
-        })}
-        {this.state.isAdmin && (
-          <div>
-            <button onClick={this.createPost}>+</button>
-            <button onClick={this.deletePost}>-</button>
-          </div>
-        )}
+      <div className="blog">
+        <section className="container">
+          {this.state.posts.map((post, i) => {
+            return (
+              <p key={i}>{post.title} - {post.content}</p>
+            );
+          })}
+          {this.state.isAdmin && (
+            <div>
+              <button onClick={this.createPost}>+</button>
+              <button onClick={this.deletePost}>-</button>
+            </div>
+          )}
+        </section>
       </div>
     );
   }
